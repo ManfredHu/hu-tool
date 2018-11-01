@@ -13,6 +13,7 @@ module.exports = {
     '^.+\\.js$': '<rootDir>/node_modules/babel-jest'
   },
   coverageDirectory: '<rootDir>/test/unit/coverage',
+  collectCoverage: true,
   collectCoverageFrom: [
     'src/**/*.{js}',
     '!src/main.js',
