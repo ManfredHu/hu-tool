@@ -20,6 +20,7 @@ url(testUrl).getHashParam('haha') //'init'
 ```
 
 ## Using NPM
+还没发布
 
 ## Using NOde
 
