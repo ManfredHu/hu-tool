@@ -5,8 +5,18 @@ a public code tool library
 In dota, gg means the game is over.I hope this tool is the last open source tool I wrote.
 It will contain some tool modules that are used daily.
 
+## Installing
+
+Using npm:
+
+```bash
+$ npm install ggtool
+```
+
 ## How to use?
 
+
+### url
 
 ### url
 ```js
@@ -17,6 +27,7 @@ url(testUrl).getQueryParam('mobile') //'1'
 url(testUrl).getUrlParam('_test') //'2'
 url(testUrl).getUrlParam('test') //undefined
 url(testUrl).getHashParam('haha') //'init'
+url(realUrl).format() //跟原来一样
 ```
 
 ## Using NPM

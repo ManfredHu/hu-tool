@@ -1,8 +1,7 @@
 {
   "name": "ggtool",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "good game tools, means final tool",
-  "private": true,
   "directories": {},
   "scripts": {
     "start": "jest --watchAll --no-cache",
@@ -15,7 +14,7 @@
     "type": "git",
     "url": "git+https://github.com/ManfredHu/ggtool.git"
   },
-  "author": "",
+  "author": "manfredhu",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/ManfredHu/ggtool/issues"
@@ -37,5 +36,5 @@
   "dependencies": {
     "url-parse": "^1.4.3"
   },
-  "main": "dist/webpack-numbers.js"
+  "main": "dist/ggtool.js"
 }
