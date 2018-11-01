@@ -5,8 +5,8 @@
   "directories": {},
   "scripts": {
     "start": "jest --watchAll --no-cache",
-    "test": "jest && codecov",
-    "coverage": "jest --coverage",
+    "unit": "jest --config test/unit/jest.conf.js --coverage",
+    "test": "npm run unit",
     "lint": "eslint --fix src test/unit/specs",
     "build": "webpack --config webpack.prod.js",
     "watch": "jest --watch",
@@ -28,7 +28,6 @@
     "babel-plugin-module-resolver": "^3.1.1",
     "babel-preset-env": "^1.7.0",
     "clean-webpack-plugin": "^0.1.19",
-    "codecov": "^3.1.0",
     "eslint": "^5.8.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.14.0",
@@ -45,9 +44,5 @@
   "dependencies": {
     "url-parse": "^1.4.3"
   },
-  "main": "lib/ggtool.js",
-  "jest": {
-    "coverageDirectory": "./coverage/",
-    "collectCoverage": true
-  }
+  "main": "lib/ggtool.js"
 }

@@ -1,11 +1,9 @@
 # <a href='https://github.com/ManfredHu/ggtool'><img src='https://www.manfredhu.com/images/ggtool.png' height='60' alt='ggtool Logo' /></a>
 
-[![Build Status](https://travis-ci.com/ManfredHu/ggtool.svg?branch=master)](https://travis-ci.com/ManfredHu/ggtool)
-
-[![build status](https://img.shields.io/travis/ManfredHu/ggtool.svg)](https://travis-ci.com/ManfredHu/ggtool)
-
-
-
+![Travis (.org)](https://travis-ci.com/ManfredHu/ggtool.svg?branch=master&style=flat-square)
+[![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/react.svg?style=flat-square)](https://www.npmjs.com/package/ggtool)
+[![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](https://github.com/ManfredHu/ggtool)
+[![codecov](https://codecov.io/gh/ManfredHu/ggtool/branch/master/graph/badge.svg?style=flat-square)](https://codecov.io/gh/ManfredHu/ggtool)
 
 ggtool is a public code tool library.
 In dota, gg means the game is over.I hope this tool is the last open source tool I wrote.
