@@ -1,5 +1,12 @@
 # <a href='https://github.com/ManfredHu/ggtool'><img src='https://www.manfredhu.com/images/ggtool.png' height='60' alt='ggtool Logo' /></a>
 
+[![Build Status](https://travis-ci.com/ManfredHu/ggtool.svg?branch=master)](https://travis-ci.com/ManfredHu/ggtool)
+
+[![build status](https://img.shields.io/travis/ManfredHu/ggtool.svg)](https://travis-ci.com/ManfredHu/ggtool)
+
+
+
+
 ggtool is a public code tool library.
 In dota, gg means the game is over.I hope this tool is the last open source tool I wrote.
 It will contain some tool modules that are used daily.
