@@ -2,7 +2,7 @@
  * check undefined
  * @param {any} v check target
  */
-function isUndef(v) {
+function isUndef (v) {
   return v === undefined || v === null
 }
 
@@ -10,15 +10,15 @@ function isUndef(v) {
  * Detection has been defined
  * @param {any} v check target
  */
-function isDef(v) {
+function isDef (v) {
   return v !== undefined && v !== null
 }
 
-function isTrue(v) {
+function isTrue (v) {
   return v === true
 }
 
-function isFalse(v) {
+function isFalse (v) {
   return v === false
 }
 
@@ -27,7 +27,7 @@ function isFalse(v) {
  * Objects from primitive values when we know the value
  * is a JSON-compliant type.
  */
-function isObject(obj) {
+function isObject (obj) {
   return obj !== null && typeof obj === 'object'
 }
 
@@ -35,11 +35,11 @@ function isObject(obj) {
  * Strict object type check. Only returns true
  * for plain JavaScript objects.
  */
-function isPlainObject(obj) {
+function isPlainObject (obj) {
   return Object.prototype.toString.call(obj) === '[object Object]'
 }
 
-function isRegExp(v) {
+function isRegExp (v) {
   return Object.prototype.toString.call(v) === '[object RegExp]'
 }
 
@@ -47,25 +47,25 @@ function isRegExp(v) {
  * check string and number types
  * @param {any} v check target
  */
-function isPrimitive(v) {
+function isPrimitive (v) {
   return typeof v === 'string' || typeof v === 'number'
 }
 
-function isFuncton(v) {
-  return typeof v === 'function';
+function isFuncton (v) {
+  return typeof v === 'function'
 }
 
-function isArray(v) {
-  return Array.isArray(v);
+function isArray (v) {
+  return Array.isArray(v)
 }
 
-function isEmptyObj(obj) {
+function isEmptyObj (obj) {
   for (const i in obj) {
     if (obj.hasOwnProperty(i)) {
-      return false;
+      return false
     }
   }
-  return true;
+  return true
 }
 /**
  * typeof can not check NaN and Infinity
@@ -73,8 +73,8 @@ function isEmptyObj(obj) {
  * The combination of the two methods can detect the correct number type
  * @param {any} v check target
  */
-function isNumber(v) {
-  return typeof v === 'number' && isFinite(v);
+function isNumber (v) {
+  return typeof v === 'number' && isFinite(v)
 }
 
 export default {
