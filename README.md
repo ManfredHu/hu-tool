@@ -7,14 +7,13 @@ It will contain some tool modules that are used daily.
 
 ## Installing
 
-Using npm:
+### Using NPM
 
 ```bash
 $ npm install ggtool --save
 ```
 
 ## Example
-
 
 ### typeCheck
 ```js
@@ -103,11 +102,10 @@ ua(IE6UA).system.win //xp
 ua().userAgent //Show the userAgent&system of your browser now
 ```
 
-## Using NPM
-
-## Using NOde
-
-## Testing
+## Testing&Coverage
+```js
+npm run test
+```
 
 ## Ajax
 Using Axios, click [here](https://github.com/axios/axios)
