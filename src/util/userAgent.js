@@ -110,7 +110,7 @@ function client(userAgentInfo = '', platform = '') {
   const isIOS = Boolean(/iphone|ipad|ipod|ios/ig.test(ua));
 
   return {
-    ua, //用户浏览器Ua原文
+    userAgent: ua, //用户浏览器Ua原文
     engine, //包含着用户浏览器引擎（内核）信息
     browser, //包括用户浏览器品牌与版本信息
     system, //用户所用操作系统及版本信息

@@ -1,6 +1,6 @@
 {
   "name": "ggtool",
-  "version": "1.0.1",
+  "version": "1.0.4",
   "description": "good game tools, means final tool",
   "directories": {},
   "scripts": {
@@ -36,5 +36,5 @@
   "dependencies": {
     "url-parse": "^1.4.3"
   },
-  "main": "dist/ggtool.js"
+  "main": "lib/ggtool.js"
 }

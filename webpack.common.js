@@ -8,7 +8,7 @@ module.exports = {
   },
   output: {
     filename: 'ggtool.js',
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'lib'),
     library: 'ggtool',
     libraryTarget: 'umd'
   },
@@ -20,7 +20,7 @@ module.exports = {
     }
   },
   plugins: [
-    new CleanWebpackPlugin(['dist']),
+    new CleanWebpackPlugin(['lib']),
 
   ],
   module: {

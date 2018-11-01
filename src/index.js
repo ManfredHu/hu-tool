@@ -1,9 +1,9 @@
-import phone from './util/phone'
-import typeCheck from './util/typeCheck'
-import ua from './util/userAgent'
+import _phone from './util/phone'
+import _typeCheck from './util/typeCheck'
+import _userAgent from './util/userAgent'
+import _url from './util/url'
 
-export default {
-  phone,
-  typeCheck,
-  ua
-}
+export const phone = _phone;
+export const typeCheck = _typeCheck;
+export const ua = _userAgent;
+export const url = _url;

@@ -75,7 +75,7 @@ test('test isPrimitive', () => {
   expect(check.isPrimitive('Hello World')).toBeTruthy();
 })
 
-test('test isPrimitive', () => {
+test('test isEmptyObj', () => {
   expect(check.isEmptyObj({})).toBeTruthy();
   expect(check.isEmptyObj({
     a: 1
