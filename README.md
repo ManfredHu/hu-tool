@@ -1,4 +1,4 @@
-![ggtool](https://www.manfredhu.com/images/ggtool.png)
+# <a href='https://github.com/ManfredHu/ggtool'><img src='https://www.manfredhu.com/images/ggtool.png' height='60' alt='ggtool Logo' /></a>
 
 # ggtool
 a public code tool library
