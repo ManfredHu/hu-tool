@@ -59,6 +59,14 @@ function isArray(v) {
   return Array.isArray(v);
 }
 
+function isEmptyObj(obj) {
+  for (const i in obj) {
+    if (obj.hasOwnProperty(i)) {
+      return false;
+    }
+  }
+  return true;
+}
 /**
  * typeof can not check NaN and Infinity
  * isFinite can not detect string "0"
@@ -80,5 +88,6 @@ export default {
   isRegExp,
   isFuncton,
   isArray,
-  isNumber
+  isNumber,
+  isEmptyObj
 }

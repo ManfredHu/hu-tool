@@ -1,7 +1,7 @@
 import ua from '@/util/userAgent'
 
 test('check isAndroid', () => {
-  const androidUA  = 'Mozilla/5.0 (Linux; Android 8.0.0; G8142 Build/47.1.A.12.270) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Mobile Safari/537.36';
+  const androidUA = 'Mozilla/5.0 (Linux; Android 8.0.0; G8142 Build/47.1.A.12.270) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Mobile Safari/537.36';
   expect(ua(androidUA).isAndroid).toBeTruthy();
   expect(ua(androidUA).isIOS).toBeFalsy();
 
@@ -37,6 +37,15 @@ test('check isAndroid', () => {
   expect(ua(lowSafariUA).browser.safari).toBe(1.2);
   expect(ua(lowSafariUA).system.mac).toBeTruthy();
   expect(ua(lowSafariUA).browser.ver).toBe(1.2);
+
+  const lowSafariUA2 = 'Mozilla/5.0 (iPhone; CPU iPhone OS 9.0 like Mac OS X; en_US) AppleWebKit/1 (KHTML, like Gecko) Mobile/1 Safari/1 iPhone/1 EtsyInc/4.21 rv:42100.74.0';
+  expect(ua(lowSafariUA2).browser.safari).toBe(1);
+
+  const lowSafariUA3 = 'Mozilla/5.0 (Macintosh; U; PPC Mac OS X;en) AppleWebKit/312 (KHTML, like Gecko) Safari/312.1';
+  expect(ua(lowSafariUA3).browser.safari).toBe(1.3);
+
+  const lowSafariUA4 = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_8_4) AppleWebKit/536.30.1 (KHTML, like Gecko) Safari/536.30.1';
+  expect(ua(lowSafariUA4).browser.safari).toBe(2);
 
   const OperaUA = 'Opera/9.64 (Windows NT 6.0; U; Edition IBIS; zh-cn) Presto/2.1.1';
   expect(ua(OperaUA).browser.opera).toBeTruthy();
@@ -79,7 +88,6 @@ test('check isAndroid', () => {
   //Netscape Navigator 9.1 on Windows 9x
   //https://developers.whatismybrowser.com/useragents/parse/30665-netscape-navigator-windows-gecko
   const WindowMEUA = 'Mozilla/5.0 (Windows; U; Win 9x 4.90; SG; rv:1.9.2.4) Gecko/20101104 Netscape/9.1.0285'
-  console.log(ua(WindowMEUA));
   expect(ua(WindowMEUA).engine.gecko).toBeTruthy();
   expect(ua(WindowMEUA).system.win).toBe('me');
 

@@ -66,11 +66,31 @@ test('test isNumber', () => {
   })).toBeFalsy();
   expect(check.isNumber(123)).toBeTruthy();
   // number overflow
-  expect(check.isNumber(Math.pow(2,726627262726272626))).toBeFalsy();
-  expect(check.isNumber(Math.pow(2,64))).toBeTruthy();
+  expect(check.isNumber(Math.pow(2, 726627262726272626))).toBeFalsy();
+  expect(check.isNumber(Math.pow(2, 64))).toBeTruthy();
 })
 
-test('test isPrimitive', ()=>{
+test('test isPrimitive', () => {
   expect(check.isPrimitive(123)).toBeTruthy();
   expect(check.isPrimitive('Hello World')).toBeTruthy();
 })
+
+test('test isPrimitive', () => {
+  expect(check.isEmptyObj({})).toBeTruthy();
+  expect(check.isEmptyObj({
+    a: 1
+  })).toBeFalsy();
+  expect(check.isEmptyObj(getSaySomething(false))).toBeTruthy();
+  expect(check.isEmptyObj(getSaySomething(true))).toBeFalsy();
+})
+
+function getSaySomething(tag) {
+  return new saySomething(tag);
+}
+
+function saySomething(tag) {
+  if (tag) {
+    this.xixi = 1;
+  }
+}
+saySomething.prototype.xixi = 2;

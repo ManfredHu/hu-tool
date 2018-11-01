@@ -34,6 +34,8 @@
     "webpack-dev-server": "^3.1.10",
     "webpack-merge": "^4.1.4"
   },
-  "dependencies": {},
+  "dependencies": {
+    "url-parse": "^1.4.3"
+  },
   "main": "dist/webpack-numbers.js"
 }
