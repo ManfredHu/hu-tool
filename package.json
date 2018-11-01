@@ -5,7 +5,7 @@
   "private": true,
   "directories": {},
   "scripts": {
-    "start": "jest --watch --no-cache",
+    "start": "jest --watchAll --no-cache",
     "test": "jest --coverage",
     "build": "webpack --config webpack.prod.js",
     "watch": "jest --watch",
