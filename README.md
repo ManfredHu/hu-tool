@@ -1,12 +1,11 @@
-<h1 align="center">
+<h1>
   <a href='https://github.com/ManfredHu/ggtool'><img src='https://www.manfredhu.com/images/ggtool.png' height='60' alt='ggtool Logo' /></a>
 </h1>
 
 [![Travis (.com)](https://img.shields.io/travis/com/ManfredHu/ggtool.svg?style=flat-square)](https://travis-ci.org/ManfredHu/ggtool)
-[![Codecov](https://img.shields.io/codecov/c/github/codecov/example-python.svg?style=flat-square)](https://codecov.io/gh/ManfredHu/ggtool)
+[![Codecov](https://img.shields.io/codecov/c/github/ManfredHu/ggtool.svg)](https://github.com/ManfredHu/ggtool)
 [![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/react.svg?style=flat-square)](https://www.npmjs.com/package/ggtool)
 [![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](https://github.com/ManfredHu/ggtool)
-[![codecov](https://codecov.io/gh/ManfredHu/ggtool/branch/master/graph/badge.svg)](https://codecov.io/gh/ManfredHu/ggtool)
 
 ggtool is a public code tool library.
 In dota, gg means the game is over.I hope this tool is the last open source tool I wrote.
@@ -23,6 +22,7 @@ $ npm install ggtool --save
 ## Example
 
 ### typeCheck
+
 ```js
 import {typeCheck} from 'ggtool'
 
@@ -110,9 +110,19 @@ ua().userAgent //Show the userAgent&system of your browser now
 ```
 
 ## Testing&Coverage
+
 ```js
 npm run test
 ```
+
+## Development
+
+```js
+npm run start
+```
+
+Because it is a tool library, it is important to ensure the integrity of the test case.
+You need to write your test cases while perfecting your code.
 
 ## Ajax
 Using Axios, click [here](https://github.com/axios/axios)
