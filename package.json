@@ -12,6 +12,19 @@
     "watch": "jest --watch",
     "dev": "webpack-dev-server --open --config webpack.dev.js"
   },
+  "files": [
+    "src",
+    "lib/*.js"
+  ],
+  "unpkg": "lib/ggtool.js",
+  "keywords": [
+    "util",
+    "tool",
+    "url",
+    "useragent",
+    "check",
+    "phone"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ManfredHu/ggtool.git"
