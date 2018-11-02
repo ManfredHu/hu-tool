@@ -14,9 +14,16 @@ It will contain some tool modules that are used daily.
 ## Installing
 
 ### Using NPM
+To install the stable version:
 
 ```bash
 $ npm install ggtool --save
+```
+
+### Using unpkg CDN
+
+```html
+<script src="https://unpkg.com/ggtool@1.0.9/lib/ggtool.js"></script>
 ```
 
 ## Example
