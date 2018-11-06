@@ -1,6 +1,4 @@
-<h1>
-  <a href='https://github.com/ManfredHu/ggtool'><img src='https://www.manfredhu.com/images/ggtool.png' height='60' alt='ggtool Logo' /></a>
-</h1>
+<h1><a href='https://github.com/ManfredHu/ggtool'><img src='https://www.manfredhu.com/images/ggtool.png' height='60' alt='ggtool Logo' /></a></h1>
 
 [![Travis (.com)](https://img.shields.io/travis/com/ManfredHu/ggtool.svg?style=flat-square)](https://travis-ci.org/ManfredHu/ggtool)
 [![Codecov](https://img.shields.io/codecov/c/github/ManfredHu/ggtool.svg?style=flat-square)](https://github.com/ManfredHu/ggtool)
@@ -28,92 +26,92 @@ $ npm install ggtool --save
 
 ## Example
 
-### typeCheck
+### TypeCheck
 
 ```js
-import {typeCheck} from 'ggtool'
+import {TypeCheck} from 'ggtool'
 
-typeCheck.isUndef(null) //true
-typeCheck.isUndef(undefined) //true
-typeCheck.isDef(123) //true
-typeCheck.isDef(null) //false
-typeCheck.isObject(null) //false
-typeCheck.isObject({}) //true
-typeCheck.isTrue(1) //false
-typeCheck.isTrue(true) //true
-typeCheck.isFalse(false) //true
-typeCheck.isFalse(0) //false
-typeCheck.isPlainObject({a: 123}) //true
-typeCheck.isPlainObject([123, 'ac']) //false
-typeCheck.isRegExp(/abc/ig) //true
-typeCheck.isFuncton(function(){}) //true
-typeCheck.isArray([123, 'ac']) //true
-typeCheck.isNumber(Math.pow(2, 64)) //true
-typeCheck.isNumber(Math.pow(2, 726627262726272626)) //false, overflow
-typeCheck.isPrimitive(123) //true
-typeCheck.isPrimitive('Hello World') //true
-typeCheck.isEmptyObj({}) //true
+TypeCheck.isUndef(null) //true
+TypeCheck.isUndef(undefined) //true
+TypeCheck.isDef(123) //true
+TypeCheck.isDef(null) //false
+TypeCheck.isObject(null) //false
+TypeCheck.isObject({}) //true
+TypeCheck.isTrue(1) //false
+TypeCheck.isTrue(true) //true
+TypeCheck.isFalse(false) //true
+TypeCheck.isFalse(0) //false
+TypeCheck.isPlainObject({a: 123}) //true
+TypeCheck.isPlainObject([123, 'ac']) //false
+TypeCheck.isRegExp(/abc/ig) //true
+TypeCheck.isFuncton(function(){}) //true
+TypeCheck.isArray([123, 'ac']) //true
+TypeCheck.isNumber(Math.pow(2, 64)) //true
+TypeCheck.isNumber(Math.pow(2, 726627262726272626)) //false, overflow
+TypeCheck.isPrimitive(123) //true
+TypeCheck.isPrimitive('Hello World') //true
+TypeCheck.isEmptyObj({}) //true
 ```
 
-### phone
+### Phone
 ```js
-import {phone} from 'ggtool'
+import {Phone} from 'ggtool'
 
-phone.isMobile(13800138000) //true
-phone.isMobile('13800138000') //true
-phone.isMobile('075526069999') //flase
-phone.getPurePhone('13800138000123') //13800138000
-phone.getPurePhone('1380a0138000123c') //13800138000
-phone.beautifyPhone('13800138000') //138 0013 8000
-phone.beautifyPhone('ab1380abc1384') //138 0138 4
-phone.mosaic('13800138000') //138****8000
-phone.mosaic('ab1380abc1384') //138****4
-phone.mosaic('13800138000', '-') //138----8000
-phone.mosaic('13800138000', '-', 4, 7) //1380---8000
+Phone.isMobile(13800138000) //true
+Phone.isMobile('13800138000') //true
+Phone.isMobile('075526069999') //flase
+Phone.getPurePhone('13800138000123') //13800138000
+Phone.getPurePhone('1380a0138000123c') //13800138000
+Phone.beautifyPhone('13800138000') //138 0013 8000
+Phone.beautifyPhone('ab1380abc1384') //138 0138 4
+Phone.mosaic('13800138000') //138****8000
+Phone.mosaic('ab1380abc1384') //138****4
+Phone.mosaic('13800138000', '-') //138----8000
+Phone.mosaic('13800138000', '-', 4, 7) //1380---8000
 ```
 
-### url
+### URL
 ```js
-import {url} from 'ggtool'
+import {URL} from 'ggtool'
 
 const testUrl = 'http://user:pass@www.tmtpost.com:8080/p/a/t/h/2737087.html?mobile=1&mdebug=1&_test=1#haha=init&lh=1';
-url(testUrl).port //'8080'
-url(testUrl).protocol //'http'
-url(testUrl).getQueryParam('mobile') //'1'
-url(testUrl).getUrlParam('_test') //'1'
-url(testUrl).getUrlParam('test') //undefined
-url(testUrl).getHashParam('haha') //'init'
-url(testUrl).format() //Same as testUrl
-url(testUrl, {
+URL(testUrl).port //'8080'
+URL(testUrl).protocol //'http'
+URL(testUrl).getQueryParam('mobile') //'1'
+URL(testUrl).getUrlParam('_test') //'1'
+URL(testUrl).getUrlParam('test') //undefined
+URL(testUrl).getHashParam('haha') //'init'
+URL(testUrl).format() //Same as testUrl
+URL(testUrl, {
   port: '443',
   protocol: 'https'
 }).format() //https://user:pass@www.tmtpost.com:443/p/a/t/h/2737087.html?mobile=1&mdebug=1&_test=1#haha=init&lh=1
 
-url(testUrl).format({
+URL(testUrl).format({
   port: '443',
   protocol: 'https'
 }) //https://user:pass@www.tmtpost.com:443/p/a/t/h/2737087.html?mobile=1&mdebug=1&_test=1#haha=init&lh=1
 ```
 
-### ua
+### UA
 ```js
-import {ua} from 'ggtool'
+import {UA} from 'ggtool'
 
 const androidUA = 'Mozilla/5.0 (Linux; Android 8.0.0; G8142 Build/47.1.A.12.270) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Mobile Safari/537.36';
-ua(androidUA).isAndroid //true
-ua(androidUA).isIOS //false
+UA(androidUA).isAndroid //true
+UA(androidUA).isIOS //false
 
 const wechatUA = 'Mozilla/5.0 (Linux; Android 8.1.0; PAHM00 Build/OPM1.171019.026; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/62.0.3202.84 Mobile Safari/537.36 MicroMessenger/6.7.3.1360(0x26070336) NetType/WIFI Language/zh_CN Process/appbrand2';
-ua(wechatUA).isWeixin //true
-ua(wechatUA).isAndroid //true
-ua(wechatUA).isIOS //false
+UA(wechatUA).isWeixin //true
+UA(wechatUA).isAndroid //true
+UA(wechatUA).isIOS //false
 
 const IE6UA = 'Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1)';
-ua(IE6UA).browser.ie //6
-ua(IE6UA).engine.trident //2
-ua(IE6UA).system.win //xp
+UA(IE6UA).browser.ie //6
+UA(IE6UA).engine.trident //2
+UA(IE6UA).system.win //xp
 
-ua().userAgent //Show the userAgent&system of your browser now
+UA().userAgent //Show the userAgent&system of your browser now
 ```
 
 ## Testing&Coverage
@@ -139,6 +137,9 @@ Using Moment, click [here](http://momentjs.cn/)
 
 ## Cookie
 Using js-cookie, click [here](https://www.npmjs.com/package/js-cookie)
+
+## Event
+Using events, click [here](https://github.com/Gozala/events)
 
 ## License
 [MIT](http://opensource.org/licenses/MIT)
