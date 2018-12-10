@@ -22,7 +22,7 @@ function client (userAgentInfo = '', platform = '') {
     x11: false
   }
 
-  let ua = userAgentInfo || (navigator && navigator.userAgent)
+  let ua = userAgentInfo || (window && window.navigator && navigator.userAgent)
   if (/AppleWebKit\/([^(\s]+)/.test(ua)) { // 匹配Webkit内核浏览器（Chrome、Safari、新Opera）
     engine.ver = RegExp['$1']
     engine.webkit = parseFloat(engine.ver, 2)
@@ -79,7 +79,7 @@ function client (userAgentInfo = '', platform = '') {
     engine.trident = parseFloat(engine.ver, 2)
   }
 
-  let p = platform || (navigator && navigator.platform) // 判断操作系统
+  let p = platform || (window && window.navigator && navigator.platform) // 判断操作系统
   system.win = p.indexOf('Win') === 0 || Boolean(/win/ig.test(ua))
   system.mac = p.indexOf('Mac') === 0 || Boolean(/mac/ig.test(ua))
   system.linux = (p.indexOf('X11') === 0) || (p.indexOf('Linux') === 0) || Boolean(/linux|x11/ig.test(ua))

@@ -132,6 +132,11 @@ You need to write your test cases while perfecting your code.
 ## Ajax
 Using Axios, click [here](https://github.com/axios/axios)
 
+### Install
+```bash
+npm install axios
+```
+
 ## Time&Date
 Using Moment, click [here](http://momentjs.cn/)
 

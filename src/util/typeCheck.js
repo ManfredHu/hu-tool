@@ -44,11 +44,11 @@ function isRegExp (v) {
 }
 
 /**
- * check string and number types
+ * check boolean , string and number types
  * @param {any} v check target
  */
 function isPrimitive (v) {
-  return typeof v === 'string' || typeof v === 'number'
+  return typeof v === 'string' || typeof v === 'number' || typeof v === 'boolean' || typeof value === 'symbol'
 }
 
 function isFuncton (v) {
@@ -77,6 +77,7 @@ function isNumber (v) {
   return typeof v === 'number' && isFinite(v)
 }
 
+// /Volumes/guo/vue/src/shared/util.js
 export default {
   isUndef,
   isDef,
