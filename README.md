@@ -1,4 +1,4 @@
-<h1><a href='https://github.com/ManfredHu/ggtool'><img src='https://www.manfredhu.com/images/ggtool.png' height='60' alt='ggtool Logo' /></a></h1>
+<h1><a href='https://github.com/ManfredHu/gg-tool'><img src='https://www.manfredhu.com/images/ggtool.png' height='60' alt='ggtool Logo' /></a></h1>
 
 [![Travis (.com)](https://img.shields.io/travis/com/ManfredHu/ggtool.svg?style=flat-square)](https://travis-ci.org/ManfredHu/ggtool)
 [![Codecov](https://img.shields.io/codecov/c/github/ManfredHu/ggtool.svg?style=flat-square)](https://github.com/ManfredHu/ggtool)
@@ -21,7 +21,7 @@ $ npm install ggtool --save
 ### Using unpkg CDN
 
 ```html
-<script src="https://unpkg.com/ggtool@1.0.9/lib/ggtool.js"></script>
+<script src="https://unpkg.com/gg-tool@1.0.9/lib/gg-tool.js"></script>
 ```
 
 ## Example

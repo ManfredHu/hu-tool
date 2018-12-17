@@ -1,5 +1,5 @@
 {
-  "name": "ggtool",
+  "name": "gg-tool",
   "version": "1.0.10",
   "description": "good game tools, means final tool",
   "directories": {},
@@ -16,7 +16,7 @@
     "src",
     "lib/*.js"
   ],
-  "unpkg": "lib/ggtool.js",
+  "unpkg": "lib/gg-tool.js",
   "keywords": [
     "util",
     "tool",
@@ -27,14 +27,14 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ManfredHu/ggtool.git"
+    "url": "git+https://github.com/ManfredHu/gg-tool.git"
   },
   "author": "manfredhu",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ManfredHu/ggtool/issues"
+    "url": "https://github.com/ManfredHu/gg-tool/issues"
   },
-  "homepage": "https://github.com/ManfredHu/ggtool#readme",
+  "homepage": "https://github.com/ManfredHu/gg-tool#readme",
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^8.0.4",
@@ -57,5 +57,5 @@
   "dependencies": {
     "url-parse": "^1.4.3"
   },
-  "main": "lib/ggtool.js"
+  "main": "lib/gg-tool.js"
 }

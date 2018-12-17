@@ -73,6 +73,9 @@ test('test isNumber', () => {
 test('test isPrimitive', () => {
   expect(TypeCheck.isPrimitive(123)).toBeTruthy()
   expect(TypeCheck.isPrimitive('Hello World')).toBeTruthy()
+  expect(TypeCheck.isPrimitive(true)).toBeTruthy()
+  let firstName = Symbol('first name')
+  expect(TypeCheck.isPrimitive(firstName)).toBeTruthy()
 })
 
 test('test isEmptyObj', () => {

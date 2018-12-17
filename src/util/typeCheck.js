@@ -44,11 +44,11 @@ function isRegExp (v) {
 }
 
 /**
- * check boolean , string and number types
+ * check boolean , string , number and symbol types
  * @param {any} v check target
  */
 function isPrimitive (v) {
-  return typeof v === 'string' || typeof v === 'number' || typeof v === 'boolean' || typeof value === 'symbol'
+  return typeof v === 'string' || typeof v === 'number' || typeof v === 'boolean' || typeof v === 'symbol'
 }
 
 function isFuncton (v) {

@@ -104,10 +104,11 @@ function client (userAgentInfo = '', platform = '') {
   }
 
   // 特殊逻辑
-  const isWeixin = Boolean(/MicroMessenger/ig.test(ua))
-  const isAndroid = Boolean(/android|adr/ig.test(ua))
-  const isIOS = Boolean(/iphone|ipad|ipod|ios/ig.test(ua))
-
+  const isWeixin = /MicroMessenger/ig.test(ua)
+  const isAndroid = /android|adr/ig.test(ua)
+  const isIOS = /iphone|ipad|ipod|ios/ig.test(ua)
+  // all iphone , android , winphone and nikia symbian
+  const isPC = isIOS || isAndroid || /(?:Windows Phone)/.test(ua) || /(?:SymbianOS)/.test(ua)
   return {
     userAgent: ua, // 用户浏览器Ua原文
     engine, // 包含着用户浏览器引擎（内核）信息
@@ -115,7 +116,8 @@ function client (userAgentInfo = '', platform = '') {
     system, // 用户所用操作系统及版本信息
     isWeixin, // 是否是微信
     isAndroid, // 是否是安卓
-    isIOS // 是否是IOS
+    isIOS, // 是否是IOS
+    isPC
   }
 };
 

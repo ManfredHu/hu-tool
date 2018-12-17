@@ -13,7 +13,7 @@ module.exports = merge(common, {
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
-      title: 'ggtool'
+      title: 'gg-tool'
     })
   ]
 });
