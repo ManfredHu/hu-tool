@@ -7,9 +7,9 @@ module.exports = {
     app: './src/index.js'
   },
   output: {
-    filename: 'gg-tool.js',
+    filename: 'hu-tool.js',
     path: path.resolve(__dirname, 'lib'),
-    library: 'gg-tool',
+    library: 'hu-tool',
     libraryTarget: 'umd'
   },
   resolve: {

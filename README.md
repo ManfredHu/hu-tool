@@ -1,12 +1,11 @@
-<h1><a href='https://github.com/ManfredHu/gg-tool'><img src='https://www.manfredhu.com/images/ggtool.png' height='60' alt='ggtool Logo' /></a></h1>
+<h1><a href='https://github.com/ManfredHu/hu-tool'><img src='https://www.manfredhu.com/images/hu-tool.png' height='60' alt='hu-tool Logo' /></a></h1>
 
-[![Travis (.com)](https://img.shields.io/travis/com/ManfredHu/ggtool.svg?style=flat-square)](https://travis-ci.org/ManfredHu/ggtool)
-[![Codecov](https://img.shields.io/codecov/c/github/ManfredHu/ggtool.svg?style=flat-square)](https://github.com/ManfredHu/ggtool)
-[![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/react.svg?style=flat-square)](https://www.npmjs.com/package/ggtool)
-[![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](https://github.com/ManfredHu/ggtool)
+[![Travis (.com)](https://img.shields.io/travis/com/ManfredHu/hu-tool.svg?style=flat-square)](https://travis-ci.org/ManfredHu/hu-tool)
+[![Codecov](https://img.shields.io/codecov/c/github/ManfredHu/hu-tool.svg?style=flat-square)](https://github.com/ManfredHu/hu-tool)
+[![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/react.svg?style=flat-square)](https://www.npmjs.com/package/hu-tool)
+[![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](https://github.com/ManfredHu/hu-tool)
 
-ggtool is a public code tool library.
-In dota, gg means the game is over.I hope this tool is the last open source tool I wrote.
+hu-tool is a public code tool library.
 It will contain some tool modules that are used daily.
 
 ## Installing
@@ -15,13 +14,13 @@ It will contain some tool modules that are used daily.
 To install the stable version:
 
 ```bash
-$ npm install ggtool --save
+$ npm install @manfredhu/hu-tool --save
 ```
 
 ### Using unpkg CDN
 
 ```html
-<script src="https://unpkg.com/gg-tool@1.0.9/lib/gg-tool.js"></script>
+<script src="https://unpkg.com/hu-tool@1.0.9/lib/hu-tool.js"></script>
 ```
 
 ## Example
@@ -29,7 +28,7 @@ $ npm install ggtool --save
 ### TypeCheck
 
 ```js
-import {TypeCheck} from 'ggtool'
+import {TypeCheck} from 'hu-tool'
 
 TypeCheck.isUndef(null) //true
 TypeCheck.isUndef(undefined) //true
@@ -55,7 +54,7 @@ TypeCheck.isEmptyObj({}) //true
 
 ### Phone
 ```js
-import {Phone} from 'ggtool'
+import {Phone} from 'hu-tool'
 
 Phone.isMobile(13800138000) //true
 Phone.isMobile('13800138000') //true
@@ -72,7 +71,7 @@ Phone.mosaic('13800138000', '-', 4, 7) //1380---8000
 
 ### URL
 ```js
-import {URL} from 'ggtool'
+import {URL} from 'hu-tool'
 
 const testUrl = 'http://user:pass@www.tmtpost.com:8080/p/a/t/h/2737087.html?mobile=1&mdebug=1&_test=1#haha=init&lh=1';
 URL(testUrl).port //'8080'
@@ -95,7 +94,7 @@ URL(testUrl).format({
 
 ### UA
 ```js
-import {UA} from 'ggtool'
+import {UA} from 'hu-tool'
 
 const androidUA = 'Mozilla/5.0 (Linux; Android 8.0.0; G8142 Build/47.1.A.12.270) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/67.0.3396.87 Mobile Safari/537.36';
 UA(androidUA).isAndroid //true
