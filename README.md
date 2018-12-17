@@ -1,6 +1,6 @@
 <h1><a href='https://github.com/ManfredHu/hu-tool'><img src='https://www.manfredhu.com/images/hu-tool.png' height='60' alt='hu-tool Logo' /></a></h1>
 
-[![Travis (.com)](https://img.shields.io/travis/com/ManfredHu/hu-tool.svg?style=flat-square)](https://travis-ci.org/ManfredHu/hu-tool)
+[![](https://img.shields.io/travis/ManfredHu/hu-tool.svg?style=flat-square)](https://travis-ci.org/ManfredHu/hu-tool.svg)
 [![Codecov](https://img.shields.io/codecov/c/github/ManfredHu/hu-tool.svg?style=flat-square)](https://github.com/ManfredHu/hu-tool)
 [![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/react.svg?style=flat-square)](https://www.npmjs.com/package/hu-tool)
 [![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](https://github.com/ManfredHu/hu-tool)
