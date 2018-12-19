@@ -10,7 +10,8 @@
     "lint": "eslint --fix src test/unit/specs",
     "build": "webpack --config webpack.prod.js",
     "watch": "jest --watch",
-    "dev": "webpack-dev-server --open --config webpack.dev.js"
+    "dev": "webpack-dev-server --open --config webpack.dev.js",
+    "commit": "npx git-cz"
   },
   "files": [
     "src",
@@ -41,6 +42,8 @@
     "babel-plugin-module-resolver": "^3.1.1",
     "babel-preset-env": "^1.7.0",
     "clean-webpack-plugin": "^0.1.19",
+    "commitizen": "^3.0.5",
+    "cz-conventional-changelog": "^2.1.0",
     "eslint": "^5.8.0",
     "eslint-config-standard": "^12.0.0",
     "eslint-plugin-import": "^2.14.0",
@@ -57,5 +60,10 @@
   "dependencies": {
     "url-parse": "^1.4.3"
   },
-  "main": "lib/hu-tool.js"
+  "main": "lib/hu-tool.js",
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
 }

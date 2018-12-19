@@ -14,7 +14,7 @@ It will contain some tool modules that are used daily.
 To install the stable version:
 
 ```bash
-$ npm install @manfredhu/hu-tool --save
+$ npm install hu-tool --save
 ```
 
 ### Using unpkg CDN
@@ -131,16 +131,16 @@ You need to write your test cases while perfecting your code.
 ## Ajax
 Using Axios, click [here](https://github.com/axios/axios)
 
-### Install
-```bash
-npm install axios
-```
-
 ## Time&Date
-Using Moment, click [here](http://momentjs.cn/)
+Using Moment, click [here](http://momentjs.cn/) 200多K，gzipped之后大约50K，node端随便用
+前端觉得大的话推荐[dayjs](https://github.com/iamkun/dayjs)
 
 ## Cookie
 Using js-cookie, click [here](https://www.npmjs.com/package/js-cookie)
+
+## localStorage
+Using localforage, click [here](https://github.com/localForage/localForage)
+But the default use of Web SQL in PC, if you need localStorage, [modify the driver](https://localforage.github.io/localForage/#settings-api-config).
 
 ## Event
 Using events, click [here](https://github.com/Gozala/events)
