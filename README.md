@@ -21,7 +21,7 @@ $ npm install hu-tool --save
 ### Using unpkg CDN
 
 ```html
-<script src="https://unpkg.com/hu-tool@1.1.1/lib/hu-tool.js"></script>
+<script src="https://unpkg.com/hu-tool@1.1.4/lib/hu-tool.js"></script>
 ```
 
 ## Example
