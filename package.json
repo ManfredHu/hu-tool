@@ -1,6 +1,6 @@
 {
   "name": "hu-tool",
-  "version": "1.1.4",
+  "version": "1.1.5",
   "description": "good game tools, means final tool",
   "directories": {},
   "scripts": {
@@ -11,7 +11,10 @@
     "build": "webpack --config webpack.prod.js",
     "watch": "jest --watch",
     "dev": "webpack-dev-server --open --config webpack.dev.js",
-    "commit": "npx git-cz"
+    "commit": "npx git-cz",
+    "pub": "npm run build && npm version patch -f",
+    "version": "git add . && git push",
+    "postversion": "npm publish"
   },
   "files": [
     "src",
