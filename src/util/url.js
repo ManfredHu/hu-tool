@@ -35,6 +35,7 @@ class URL {
         this._parsedObj.set(i, option[i])
       }
     }
+    return this
   }
 
   getQueryParam (key) {
