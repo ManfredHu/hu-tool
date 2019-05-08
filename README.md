@@ -53,6 +53,43 @@ TypeCheck.isPrimitive('Hello World') //true
 TypeCheck.isEmptyObj({}) //true
 ```
 
+from [is-type-of](https://www.npmjs.com/package/is-type-of)
+
+API
+
+```js
+TypeCheck.array(arr)
+TypeCheck.boolean(bool)
+TypeCheck.null(null)
+TypeCheck.nullOrUndefined(null)
+TypeCheck.number(num)
+TypeCheck.string(str)
+TypeCheck.symbol(sym)
+TypeCheck.undefined(undef)
+TypeCheck.regExp(reg)
+TypeCheck.object(obj)
+TypeCheck.date(date)
+TypeCheck.error(err)
+TypeCheck.function(fn)
+TypeCheck.primitive(prim)
+TypeCheck.buffer(buf)
+TypeCheck.stream(stream)
+TypeCheck.readableStream(readable)
+TypeCheck.writableStream(writable)
+TypeCheck.duplexStream(duplex)
+TypeCheck.class(obj)
+TypeCheck.finite(num)
+TypeCheck.NaN(NaN)
+TypeCheck.generator(gen)
+TypeCheck.generatorFunction(fn)
+TypeCheck.promTypeChecke(fn)
+TypeCheck.int(int)
+TypeCheck.double(double)
+TypeCheck.int32(int)
+TypeCheck.long(long)
+TypeCheck.Long(Long)
+```
+
 ### Phone
 ```js
 import {Phone} from 'hu-tool'

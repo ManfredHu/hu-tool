@@ -1,3 +1,5 @@
+const is = require('is-type-of');
+
 /**
  * check undefined
  * @param {any} v check target
@@ -36,11 +38,11 @@ function isObject (obj) {
  * for plain JavaScript objects.
  */
 function isPlainObject (obj) {
-  return Object.prototype.toString.call(obj) === '[object Object]'
+  return objectToString(obj) === '[object Object]'
 }
 
 function isRegExp (v) {
-  return Object.prototype.toString.call(v) === '[object RegExp]'
+  return objectToString(v) === '[object RegExp]'
 }
 
 /**
@@ -48,7 +50,7 @@ function isRegExp (v) {
  * @param {any} v check target
  */
 function isPrimitive (v) {
-  return typeof v === 'string' || typeof v === 'number' || typeof v === 'boolean' || typeof v === 'symbol'
+  return is.primitive(v)
 }
 
 function isFuncton (v) {
@@ -56,7 +58,7 @@ function isFuncton (v) {
 }
 
 function isArray (v) {
-  return Array.isArray(v)
+  return is.array(v)
 }
 
 function isEmptyObj (obj) {
@@ -77,8 +79,13 @@ function isNumber (v) {
   return typeof v === 'number' && isFinite(v)
 }
 
+function objectToString(o) {
+  return Object.prototype.toString.call(o);
+}
+
 // /Volumes/guo/vue/src/shared/util.js
 export default {
+  ...is,
   isUndef,
   isDef,
   isTrue,
