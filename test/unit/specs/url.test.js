@@ -1,6 +1,6 @@
 import URL from '@/util/url'
 
-const realUrl = 'https://m.999.mm.com/m_nn/active/gc.wtf.nocache.html?__channel=nkm&debug=1&timer=1&clearLocal=1&x_xxx_m=on&log=1#/'
+const realUrl = 'https://m.999.mm.com/m_nn/active/gc.wtf.nocache.html?__channel=nkm&debug=1&timer=1&clearLocal=1&x_xxx_m=on&log=1#/abc?timer=1123'
 const testUrl = 'http://user:pass@www.tmtpost.com:8080/p/a/t/h/2737087.html?mobile=1&mdebug=1&_test=1#haha=init&lh=1'
 
 test('parse url', () => {
@@ -47,6 +47,10 @@ test('url pass null', () => {
   expect(execUrl).toThrow(/must be string/)
   expect(URL().protocol).toBe('http')
   expect(URL().host).toBe('localhost')
+})
+
+test('get url chain', () => {
+  expect(new URL(realUrl).getHashParam('timer')).toBe('1123')
 })
 
 function checkSetMethod () {
