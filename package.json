@@ -1,6 +1,6 @@
 {
   "name": "hu-tool",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "good game tools, means final tool",
   "directories": {},
   "scripts": {
@@ -18,7 +18,8 @@
   },
   "files": [
     "src",
-    "lib/*.js"
+    "lib/*.js",
+    "types"
   ],
   "unpkg": "lib/hu-tool.js",
   "keywords": [
