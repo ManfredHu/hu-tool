@@ -3,11 +3,11 @@ declare module "hu-tool" {
     isMobile(type: string | number): boolean
     getPurePhone(type: string | number): string
     beautifyPhone(type: string | number): string
-    mosaic(phone: string, mosaicChar?: string, mosaicStart?: number, mosaicEnd?: number)
+    mosaic(phone: string, mosaicChar?: string, mosaicStart?: number, mosaicEnd?: number): string
   }
 
-  const Phone:Phone
-  const phone:Phone
+  const Phone: Phone
+  const phone: Phone
 
   interface is {
     isUndef(type: any): boolean
@@ -56,6 +56,9 @@ declare module "hu-tool" {
     Long(type: any): boolean
   }
 
+  const is: is
+  const TypeCheck: is
+
   interface Parse {
     protocol: string
     hash: string
@@ -83,7 +86,8 @@ declare module "hu-tool" {
     getHashParam(key:string):string
     format(option:Object):string
   }
-  const URL:URL
+  const URL: URL
+  const url: URL
 
   interface engine {
     trident: number
@@ -121,4 +125,6 @@ declare module "hu-tool" {
     isPC: boolean
     isPhone: boolean
   }
+  const UA: UA
+  const ua: UA
 }
