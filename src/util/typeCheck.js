@@ -1,4 +1,4 @@
-const is = require('is-type-of');
+const is = require('is-type-of')
 
 /**
  * check undefined
@@ -79,8 +79,8 @@ function isNumber (v) {
   return typeof v === 'number' && isFinite(v)
 }
 
-function objectToString(o) {
-  return Object.prototype.toString.call(o);
+function objectToString (o) {
+  return Object.prototype.toString.call(o)
 }
 
 // /Volumes/guo/vue/src/shared/util.js

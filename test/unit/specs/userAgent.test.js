@@ -97,4 +97,5 @@ test('check isAndroid', () => {
   const symbinaUA = 'Mozilla/5.0 (SymbianOS/9.4; Series60/5.0 Nokia5800d-1/60.0.003; Profile/MIDP-2.1 Configuration/CLDC-1.1 ) AppleWebKit/533.4 (KHTML, like Gecko) NokiaBrowser/7.3.1.33 Mobile Safari/533.4'
   expect(UA(symbinaUA).isPC).toBeFalsy()
   expect(UA(symbinaUA).isPhone).toBeTruthy()
+  expect(UA().isPC).toBeTruthy()
 })

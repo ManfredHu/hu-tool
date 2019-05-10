@@ -51,7 +51,16 @@ test('url pass null', () => {
 
 test('get url chain', () => {
   expect(new URL(realUrl).getHashParam('timer')).toBe('1123')
+  expect(URL(realUrl).getHashParam('timer')).toBe('1123')
 })
+
+// test('get url chain', () => {
+//   console.log(111, URL) // [Function: getUrl]
+//   console.log(222, new URL()) // class URL
+//   console.log(333, new URL(realUrl))
+//   console.log(555, URL(realUrl))
+//   expect(new URL()).toThrowError()
+// })
 
 function checkSetMethod () {
   const parseObj = URL(realUrl)

@@ -4,3 +4,4 @@
 /lib/
 /*.js
 /test/unit/coverage/
+/test/unit/specs/index.test.js

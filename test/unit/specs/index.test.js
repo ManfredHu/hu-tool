@@ -1,4 +1,4 @@
-import {default as index, is} from '@/index'
+import { default as index, is } from '@/index'
 
 test('index', () => {
   expect(index.phone.isMobile(13800138000)).toBeTruthy()

@@ -2,7 +2,7 @@ import Parse from 'url-parse'
 
 class URL {
   constructor (link, option) {
-    if (typeof link === 'undefined') {
+    if (typeof link === 'undefined' && window) {
       link = window && window.location && window.location.href
     }
 

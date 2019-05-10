@@ -22,7 +22,16 @@ function client (userAgentInfo = '', platform = '') {
     x11: false
   }
 
-  let ua = userAgentInfo || (window && window.navigator && navigator.userAgent)
+  let ua = userAgentInfo
+  if (!ua) {
+    if (window && window.navigator && window.navigator.userAgent) {
+      // 默认值
+      ua = window.navigator.userAgent
+    } else {
+      throw new Error('not window global variable, please pass userAgentInfo param')
+    }
+  }
+
   if (/AppleWebKit\/([^(\s]+)/.test(ua)) { // 匹配Webkit内核浏览器（Chrome、Safari、新Opera）
     engine.ver = RegExp['$1']
     engine.webkit = parseFloat(engine.ver, 2)
@@ -49,7 +58,7 @@ function client (userAgentInfo = '', platform = '') {
       }
       browser.safari = browser.ver = SafariVersion
     }
-  } /* istanbul ignore next */ else if (window.opera) { // 只匹配拥有Presto内核的老版本Opera 5+(12.15-)
+  } /* istanbul ignore next */ else if (window && window.opera) { // 只匹配拥有Presto内核的老版本Opera 5+(12.15-)
     engine.ver = browser.ver = window.opera.version()
     engine.presto = browser.opera = parseFloat(engine.ver, 2)
   } else if (/Opera[/\s](\S+)/.test(ua)) { // 匹配不支持window.opera的Opera 5-或伪装的Opera
