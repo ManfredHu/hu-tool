@@ -25,6 +25,8 @@ test('mosaic phone', () => {
   expect(Phone.mosaic('13800138000', '-')).toBe('138----8000')
   expect(Phone.mosaic('13800138000', '-', 4, 7)).toBe('1380---8000')
   expect(Phone.mosaic('13800138000', '-', 4, 4)).not.toBe('1380***38000')
+  expect(Phone.mosaic('')).not.toBe('1380***38000')
+  expect(Phone.mosaic(undefined)).not.toBe('1380***38000')
   expect(checkMosaicPhone).toThrow('mosaicEnd must bigger than mosaicStart')
   expect(checkMosaicPhoneError).toThrow()
 })
