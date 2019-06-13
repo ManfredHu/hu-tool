@@ -1,9 +1,14 @@
-declare module "hu-tool" {
+declare module 'hu-tool' {
   interface Phone {
     isMobile(type: string | number): boolean
     getPurePhone(type: string | number): string
     beautifyPhone(type: string | number): string
-    mosaic(phone: string, mosaicChar?: string, mosaicStart?: number, mosaicEnd?: number): string
+    mosaic(
+      phone: string,
+      mosaicChar?: string,
+      mosaicStart?: number,
+      mosaicEnd?: number
+    ): string
   }
 
   const Phone: Phone
@@ -81,10 +86,12 @@ declare module "hu-tool" {
 
   interface URL {
     _parsedObj: Parse
-    getQueryParam(key:string):string
-    getUrlParam(key:string):string
-    getHashParam(key:string):string
-    format(option:Object):string
+    getQueryParam(key: string): string
+    getUrlParam(key: string): string
+    getHashParam(key: string): string
+    format(option: Object): string
+    getAllQueryParams(): object
+    getAllHashParams(): object
   }
   const URL: URL
   const url: URL

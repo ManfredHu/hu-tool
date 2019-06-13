@@ -1,7 +1,7 @@
 import Parse from 'url-parse'
 
 class URL {
-  constructor (link, option) {
+  constructor(link, option) {
     if (typeof link === 'undefined' && window) {
       link = window && window.location && window.location.href
     }
@@ -38,21 +38,25 @@ class URL {
     return this
   }
 
-  getQueryParam (key) {
+  getQueryParam(key) {
     return this._parsedObj.query[key]
   }
 
-  getUrlParam (key) {
+  getAllQueryParams() {
+    return this._parsedObj.query
+  }
+
+  getUrlParam(key) {
     return this.getQueryParam(key)
   }
 
-  getHashParam (key) {
+  getHashParam(key) {
     const hash = this._parsedObj.hash
     const reg = new RegExp('[^|#|&]?' + key + '=([^&]*(?=&|$))')
     return hash.match(reg)[1]
   }
 
-  format (option) {
+  format(option) {
     for (const i in option) {
       if (this._attrArr.indexOf(i) > -1) {
         this._parsedObj.set(i, option[i])
@@ -60,9 +64,20 @@ class URL {
     }
     return this._parsedObj.toString()
   }
+
+  getAllHashParams() {
+    const hashQueryParamsStr = this._parsedObj.hash.match(/^#[^\?]*\?([^#]*)/)[1]
+    const tempArr = hashQueryParamsStr.split('&')
+    const obj = {}
+    tempArr.forEach(i => {
+      const [key, value] = i.split('=')
+      obj[key] = value
+    })
+    return obj
+  }
 }
 
-function getUrl (link, option) {
+function getUrl(link, option) {
   return new URL(link, option)
 }
 

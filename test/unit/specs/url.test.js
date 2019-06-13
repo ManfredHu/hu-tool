@@ -1,6 +1,6 @@
 import URL from '@/util/url'
 
-const realUrl = 'https://m.999.mm.com/m_nn/active/gc.wtf.nocache.html?__channel=nkm&debug=1&timer=1&clearLocal=1&x_xxx_m=on&log=1#/abc?timer=1123'
+const realUrl = 'https://m.999.mm.com/m_nn/active/gc.wtf.nocache.html?__channel=nkm&debug=1&timer=1&clearLocal=1&x_xxx_m=on&log=1#/abc?timer=1123&name=mygirls'
 const testUrl = 'http://user:pass@www.tmtpost.com:8080/p/a/t/h/2737087.html?mobile=1&mdebug=1&_test=1#haha=init&lh=1'
 
 test('parse url', () => {
@@ -41,7 +41,7 @@ test('parse url', () => {
 })
 
 test('url pass null', () => {
-  function execUrl () {
+  function execUrl() {
     URL(null)
   }
   expect(execUrl).toThrow(/must be string/)
@@ -61,9 +61,17 @@ test('get url chain', () => {
 //   console.log(555, URL(realUrl))
 //   expect(new URL()).toThrowError()
 // })
+test('getAllQueryParams', () => {
+  expect(new URL(realUrl).getAllQueryParams()).toBeTruthy()
+})
 
-function checkSetMethod () {
+test('getAllHashParams', () => {
+  expect(new URL(realUrl).getAllHashParams().name).toBe('mygirls')
+})
+
+function checkSetMethod() {
   const parseObj = URL(realUrl)
   parseObj.protocol = 'http'
+
   return parseObj.format()
 }
