@@ -21,7 +21,7 @@ declare module "hu-tool" {
     isFuncton(type: any): boolean
     isArray(type: any): boolean
     isNumber(type: any): boolean
-    isEmptyOb(type: any): boolean
+    isEmptyObj(type: any): boolean
 
     // https://www.npmjs.com/package/is-type-of
     array(type: any): boolean
