@@ -62,7 +62,7 @@ test('get url chain', () => {
 //   expect(new URL()).toThrowError()
 // })
 test('getAllQueryParams', () => {
-  expect(new URL(realUrl).getAllQueryParams()).toBeTruthy()
+  expect(new URL(realUrl).getAllQueryParams().debug).toBe('1')
 })
 
 test('getAllHashParams', () => {

@@ -66,10 +66,9 @@ class URL {
   }
 
   getAllHashParams() {
-    const hashQueryParamsStr = this._parsedObj.hash.match(/^#[^\?]*\?([^#]*)/)[1]
-    const tempArr = hashQueryParamsStr.split('&')
+    const matchArr = this._parsedObj.hash.match(/(\w+=\w+)/g)
     const obj = {}
-    tempArr.forEach(i => {
+    matchArr.forEach(i => {
       const [key, value] = i.split('=')
       obj[key] = value
     })
