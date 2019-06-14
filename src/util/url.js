@@ -68,10 +68,12 @@ class URL {
   getAllHashParams() {
     const matchArr = this._parsedObj.hash.match(/(\w+=\w+)/g)
     const obj = {}
-    matchArr.forEach(i => {
-      const [key, value] = i.split('=')
-      obj[key] = value
-    })
+    if (matchArr) {
+      matchArr.forEach(i => {
+        const [key, value] = i.split('=')
+        obj[key] = value
+      })
+    }
     return obj
   }
 }
