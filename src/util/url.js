@@ -80,6 +80,13 @@ class URL {
     }
     return obj
   }
+
+  checkIsLink() {
+    if (this._parsedObj.pathname !== '/' && this._parsedObj.host !== 'localhost') {
+      return true
+    }
+    return false
+  }
 }
 
 function getUrl(link, option) {
