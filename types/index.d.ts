@@ -92,6 +92,7 @@ declare module 'hu-tool' {
     format(option: Object): string
     getAllQueryParams(): object
     getAllHashParams(): object
+    checkIsLink(): boolean
   }
   const URL: URL
   const url: URL
