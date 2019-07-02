@@ -52,6 +52,7 @@ test('url pass null', () => {
 test('get url chain', () => {
   expect(new URL(realUrl).getHashParam('timer')).toBe('1123')
   expect(URL(realUrl).getHashParam('timer')).toBe('1123')
+  expect(URL(realUrl).getHashParam('time')).toBe('')
 })
 
 // test('get url chain', () => {

@@ -53,7 +53,11 @@ class URL {
   getHashParam(key) {
     const hash = this._parsedObj.hash
     const reg = new RegExp('[^|#|&]?' + key + '=([^&]*(?=&|$))')
-    return hash.match(reg)[1]
+    const matchResult = hash.match(reg)
+    if (matchResult && matchResult[1]) {
+      return matchResult[1]
+    }
+    return ''
   }
 
   format(option) {
