@@ -81,11 +81,15 @@ class URL {
     return obj
   }
 
-  checkIsLink() {
-    if (this._parsedObj.pathname !== '/' && this._parsedObj.host !== 'localhost') {
-      return true
-    }
-    return false
+  validUrl(str) {
+    if (!str) str = this.format()
+    const pattern = new RegExp('^(https?:\\/\\/)?' + // protocol
+      '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // domain name
+      '((\\d{1,3}\\.){3}\\d{1,3}))' + // OR ip (v4) address
+      '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // port and path
+      '(\\?[;&a-z\\d%_.~+=-]*)?' + // query string
+      '(\\#\/?[-a-z\\d_]*)?(\\?[;&a-z\\d%_.~+=-]*)?$', 'i') // fragment locator
+    return !!pattern.test(str)
   }
 }
 
