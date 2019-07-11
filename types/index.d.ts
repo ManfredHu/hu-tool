@@ -94,8 +94,8 @@ declare module 'hu-tool' {
     getAllHashParams(): object
     validUrl(): boolean
   }
-  const URL: URL
-  const url: URL
+  const URL: URL_Static
+  const url: URL_Static
 
   interface engine {
     trident: number
