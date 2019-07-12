@@ -5,8 +5,8 @@ import check from './typeCheck'
  * The second number must be one of the numbers 34578
  * @param {any} v
  */
-function isMobile (v) {
-  return (/^1[3|4|5|7|8][0-9]\d{8}$/.test(v))
+function isMobile(v) {
+  return (/^1[0-9]\d{9}$/.test(v))
 }
 
 /**
@@ -14,7 +14,7 @@ function isMobile (v) {
  * For example: '138a0c013s8000' format to '13800138000'
  * @param {string} v
  */
-function getPurePhone (v) {
+function getPurePhone(v) {
   let temp
   if (typeof v !== 'string') {
     temp = String(v)
@@ -32,14 +32,16 @@ function getPurePhone (v) {
  * For example: '13800138000' format to '138 0013 8000'
  * @param {string} v
  */
-function beautifyPhone (v) {
+function beautifyPhone(v) {
   let rst = []
   let resultStr = getPurePhone(v)
   rst.push(resultStr.substring(0, 3))
   rst.push(resultStr.substring(3, 7))
   rst.push(resultStr.substring(7, 11))
 
-  while (rst[rst.length - 1] === '') { rst.pop() }
+  while (rst[rst.length - 1] === '') {
+    rst.pop()
+  }
 
   return rst.join(' ')
 }
@@ -52,7 +54,7 @@ function beautifyPhone (v) {
  * @param {string} mosaicStart
  * @param {string} mosaicEnd
  */
-function mosaic (phone, mosaicChar = '*', mosaicStart = 3, mosaicEnd = 7) {
+function mosaic(phone, mosaicChar = '*', mosaicStart = 3, mosaicEnd = 7) {
   if (typeof mosaicChar !== 'string') {
     mosaicChar = String(mosaicChar)
   }
