@@ -82,6 +82,25 @@ declare module 'hu-tool' {
   // can URL(url) or new URL()
   interface URL_Static {
     new (link: string, option: Object): URL
+    new (link: string): URL
+
+    /** 作为函数使用 */
+    (link: string): URL
+    (option: object): URL
+
+    _parsedObj: Parse
+    getQueryParam(key: string): string
+    getUrlParam(key: string): string
+    getHashParam(key: string): string
+    format(option: Object): string
+    getAllQueryParams(): object
+    getAllHashParams(): object
+    validUrl(): boolean
+    addQueryParam(params: string | string[] | object): string
+    removeQueryParam(params: string | string[] | object): string
+    addHashParam(params: string | string[] | object): string
+    removeHashParam(params: string | string[] | object): string
+    hashFormat(allHashParams: object): string
   }
 
   interface URL {
@@ -93,6 +112,11 @@ declare module 'hu-tool' {
     getAllQueryParams(): object
     getAllHashParams(): object
     validUrl(): boolean
+    addQueryParam(params: string | string[] | object): string
+    removeQueryParam(params: string | string[] | object): string
+    addHashParam(params: string | string[] | object): string
+    removeHashParam(params: string | string[] | object): string
+    hashFormat(allHashParams: object): string
   }
   const URL: URL_Static
   const url: URL_Static

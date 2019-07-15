@@ -1,4 +1,5 @@
 import Parse from 'url-parse'
+import _typeCheck from './typeCheck'
 
 class URL {
   constructor(link, option) {
@@ -39,7 +40,7 @@ class URL {
   }
 
   getQueryParam(key) {
-    return this._parsedObj.query[key]
+    return this._parsedObj.query[key] || ''
   }
 
   getAllQueryParams() {
@@ -90,6 +91,100 @@ class URL {
       '(\\?[;&a-z\\d%_.~+=-]*)?' + // query string
       '(\\#\/?[-a-z\\d_]*)?(\\?[;&a-z\\d%_.~+=-]*)?$', 'i') // fragment locator
     return !!pattern.test(str)
+  }
+
+  addQueryParam(obj) {
+    if (!obj) throw new Error('not params in addQueryParam')
+    if (typeof obj === 'string') {
+      const rst = obj.match(/\w+=\w+/g)
+      if (_typeCheck.isArray(rst)) {
+        rst.forEach(item => {
+          const [key, value] = item.split('=')
+          this._parsedObj.query[key] = value
+        })
+      }
+    } else if (typeof obj === 'object' && !_typeCheck.isEmptyObj(obj)) {
+      for (const i in obj) {
+        this._parsedObj.query[i] = obj[i]
+      }
+    } else {
+      throw new Error('params error, please pass string|Object type')
+    }
+    return this._parsedObj.toString()
+  }
+
+  removeQueryParam(obj) {
+    const that = this
+    if (typeof obj === 'string') {
+      this._parsedObj.query[obj] = null // set null will return ''
+    } else if (_typeCheck.isArray(obj)) {
+      obj.forEach(item => {
+        that._parsedObj.query[item] = null // set null will return ''
+      })
+    } else if (typeof obj === 'object' && !_typeCheck.isEmptyObj(obj)) {
+      for (const i in obj) {
+        this._parsedObj.query[i] = null
+      }
+    } else {
+      throw new Error('params error, please pass string|Array|Object type')
+    }
+    return this._parsedObj.toString()
+  }
+
+  addHashParam(obj) {
+    if (!obj) throw new Error('not params in addHashParam')
+
+    const allHashParams = this.getAllHashParams()
+    if (typeof obj === 'string') {
+      const rst = obj.match(/\w+=\w+/g)
+      if (_typeCheck.isArray(rst)) {
+        rst.forEach(item => {
+          const [key, value] = item.split('=')
+          allHashParams[key] = value
+        })
+      }
+    } else if (typeof obj === 'object' && !_typeCheck.isEmptyObj(obj)) {
+      for (const i in obj) {
+        allHashParams[i] = obj[i]
+      }
+    } else {
+      throw new Error('params error, please pass string|Object type')
+    }
+    return this.hashFormat(allHashParams)
+  }
+
+  removeHashParam(obj) {
+    const allHashParams = this.getAllHashParams()
+    if (typeof obj === 'string') {
+      allHashParams[obj] = null // set null will return ''
+    } else if (_typeCheck.isArray(obj)) {
+      obj.forEach(item => {
+        allHashParams[item] = null // set null will return ''
+      })
+    } else if (typeof obj === 'object' && !_typeCheck.isEmptyObj(obj)) {
+      for (const i in obj) {
+        allHashParams[i] = null
+      }
+    } else {
+      throw new Error('params error, please pass string|Array|Object type')
+    }
+    return this.hashFormat(allHashParams)
+  }
+
+  hashFormat(allHashParams) {
+    const hash = this._parsedObj.hash.match(/\?([^#]+)/)
+    if (!_typeCheck.isArray(hash) || !hash[1]) {
+      throw new Error('hash not match /\?([^#]+)/')
+      return
+    }
+    const tempArr = []
+    for (const i in allHashParams) {
+      if (allHashParams[i]) {
+        tempArr.push(`${i}=${allHashParams[i]}`)
+      }
+    }
+    this._parsedObj.hash = this._parsedObj.hash.replace(hash[1], tempArr.join('&'))
+    return this._parsedObj.toString()
   }
 }
 

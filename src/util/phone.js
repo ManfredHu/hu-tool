@@ -6,7 +6,7 @@ import check from './typeCheck'
  * @param {any} v
  */
 function isMobile(v) {
-  return (/^1[0-9]\d{9}$/.test(v))
+  return (/^1[3-9]\d{9}$/.test(v))
 }
 
 /**

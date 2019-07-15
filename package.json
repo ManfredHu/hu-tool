@@ -1,6 +1,6 @@
 {
   "name": "hu-tool",
-  "version": "1.2.19",
+  "version": "1.2.20",
   "description": "good game tools, means final tool",
   "directories": {},
   "scripts": {
@@ -13,7 +13,7 @@
     "start": "webpack-dev-server --open --config webpack.dev.js",
     "commit": "npx git-cz",
     "pub": "npm run build && npm version patch -f",
-    "version": "git add . && git push",
+    "version": "git add . && git commit -m 'auto commit' && git push",
     "postversion": "npm publish"
   },
   "files": [

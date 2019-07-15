@@ -84,3 +84,59 @@ function checkSetMethod() {
 
   return parseObj.format()
 }
+
+test('validUrl', () => {
+  expect(URL().validUrl(checkIsHashTest)).toBeFalsy()
+  expect(URL().validUrl(checkIsLinkTest)).toBeTruthy()
+  expect(URL(checkIsLinkTest).validUrl()).toBeTruthy()
+})
+
+test('addQueryParam', () => {
+  expect(URL(URL(realUrl).addQueryParam({
+    debug: 2
+  })).getQueryParam('debug')).toBe('2')
+  expect(URL(URL(realUrl).addQueryParam({
+    debug: 1
+  })).getQueryParam('debug')).toBe('1')
+  expect(URL(URL(realUrl).addQueryParam({
+    debug: 1,
+    wtf: 'myName'
+  })).getQueryParam('wtf')).toBe('myName')
+  expect(URL(URL(realUrl).addQueryParam({
+    debug: 1,
+    wtf: 'myName'
+  })).getQueryParam('ftw')).toBe('')
+  expect(URL(URL(realUrl).addQueryParam('/path/path?debug=1&wtf=myName')).getQueryParam('wtf')).toBe('myName')
+})
+
+test('removeQueryParam', () => {
+  expect(URL(URL(realUrl).removeQueryParam({
+    debug: 2
+  })).getQueryParam('debug')).toBe('')
+  expect(URL(URL(realUrl).removeQueryParam('debug')).getQueryParam('debug')).toBe('')
+  const temp = URL(URL(realUrl).removeQueryParam(['debug', '__channel']))
+  expect(temp.getQueryParam('debug')).toBe('')
+  expect(temp.getQueryParam('__channel')).toBe('')
+})
+
+test('addHashParam', () => {
+  const temp = URL(URL(realUrl).addHashParam({
+    debug: 2
+  }))
+  expect(temp.getHashParam('debug')).toBe('2')
+  expect(URL(URL(realUrl).addHashParam({
+    debug: 1,
+    wtf: 'myName'
+  })).getHashParam('ftw')).toBe('')
+  expect(URL(URL(realUrl).addHashParam('/path/path?debug=1&wtf=myName')).getHashParam('wtf')).toBe('myName')
+})
+
+test('removeHashParam', () => {
+  expect(URL(URL(realUrl).removeHashParam({
+    timer: 2
+  })).getHashParam('timer')).toBe('')
+  expect(URL(URL(realUrl).removeHashParam('timer')).getHashParam('timer')).toBe('')
+  const temp = URL(URL(realUrl).removeHashParam(['timer', 'name']))
+  expect(temp.getHashParam('timer')).toBe('')
+  expect(temp.getHashParam('name')).toBe('')
+})
