@@ -172,18 +172,32 @@ class URL {
   }
 
   hashFormat(allHashParams) {
+    // maybe null or array
     const hash = this._parsedObj.hash.match(/\?([^#]+)/)
-    if (!_typeCheck.isArray(hash) || !hash[1]) {
-      throw new Error('hash not match /\?([^#]+)/')
-      return
-    }
     const tempArr = []
     for (const i in allHashParams) {
       if (allHashParams[i]) {
         tempArr.push(`${i}=${allHashParams[i]}`)
       }
     }
-    this._parsedObj.hash = this._parsedObj.hash.replace(hash[1], tempArr.join('&'))
+
+    if (_typeCheck.isArray(hash) && hash[1]) {
+      // 这种是hash有参数的，直接replace掉
+      this._parsedObj.hash = this._parsedObj.hash.replace(hash[1], tempArr.join('&'))
+    } else {
+      // 没有hash参数的，如下面几种
+      // ''.match(/\?([^#]+)/)
+      // '#/abc'.match(/\?([^#]+)/)
+      // '#/abc?'.match(/\?([^#]+)/)
+      let hashTemp = this._parsedObj.hash
+      if (hashTemp.indexOf('#') === -1) {
+        hashTemp += '#'
+      }
+      if (hashTemp.indexOf('?') === -1) {
+        hashTemp += '?'
+      }
+      this._parsedObj.hash += hashTemp + tempArr.join('&')
+    }
     return this._parsedObj.toString()
   }
 }

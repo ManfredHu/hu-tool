@@ -4,6 +4,8 @@ const realUrl = 'https://m.999.mm.com/m_nn/active/gc.wtf.nocache.html?__channel=
 const testUrl = 'http://user:pass@www.tmtpost.com:8080/p/a/t/h/2737087.html?mobile=1&mdebug=1&_test=1#haha=init&lh=1'
 const checkIsLinkTest = 'https://abasc.qqwe.com/mobile/heiheiehie/index.html?phone=13800138000&source=755_lt&code=0610uEBn0Od1Vl1zWNyn0DbyBn00uEBQ&state=123#/order?pid=9'
 const checkIsHashTest = 'goodsDetail'
+const newTestUrl = 'http://www.baidu.com?hehe=test&abc=1&phone=18682193117&source=20_dx&debug=vconsole&nofans=1&idcard=441502199401262516&code=021NlJ870yuCmF1hdZ970jc2970NlJ8H'
+const newTestUrl2 = 'http://www.baidu.com?hehe=test&abc=1&phone=18682193117&source=20_dx&debug=vconsole&nofans=1&idcard=441502199401262516&code=021NlJ870yuCmF1hdZ970jc2970NlJ8H#abc'
 
 test('parse url', () => {
   expect(URL(testUrl).port).toBe('8080')
@@ -129,6 +131,10 @@ test('addHashParam', () => {
     wtf: 'myName'
   })).getHashParam('ftw')).toBe('')
   expect(URL(URL(realUrl).addHashParam('/path/path?debug=1&wtf=myName')).getHashParam('wtf')).toBe('myName')
+  const temp2 = URL(URL(newTestUrl).addHashParam('aaa=2'))
+  expect(temp2.getHashParam('aaa')).toBe('2')
+  const temp3 = URL(URL(newTestUrl2).addHashParam('aaa=2'))
+  expect(temp3.getHashParam('aaa')).toBe('2')
 })
 
 test('removeHashParam', () => {
