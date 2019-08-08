@@ -6,6 +6,7 @@ const checkIsLinkTest = 'https://abasc.qqwe.com/mobile/heiheiehie/index.html?pho
 const checkIsHashTest = 'goodsDetail'
 const newTestUrl = 'http://www.baidu.com?hehe=test&abc=1&phone=18682193117&source=20_dx&debug=vconsole&nofans=1&idcard=441502199401262516&code=021NlJ870yuCmF1hdZ970jc2970NlJ8H'
 const newTestUrl2 = 'http://www.baidu.com?hehe=test&abc=1&phone=18682193117&source=20_dx&debug=vconsole&nofans=1&idcard=441502199401262516&code=021NlJ870yuCmF1hdZ970jc2970NlJ8H#abc'
+const checkIsLinkTest2 = '//baidu.com/aics-cloud/xiaomi/page.do?channel=21115&id=24638123'
 
 test('parse url', () => {
   expect(URL(testUrl).port).toBe('8080')
@@ -78,6 +79,7 @@ test('validUrl', () => {
   expect(URL().validUrl(checkIsHashTest)).toBeFalsy()
   expect(URL().validUrl(checkIsLinkTest)).toBeTruthy()
   expect(URL(checkIsLinkTest).validUrl()).toBeTruthy()
+  expect(URL().validUrl(checkIsLinkTest2)).toBeTruthy()
 })
 
 function checkSetMethod() {
