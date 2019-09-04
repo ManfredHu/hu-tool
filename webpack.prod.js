@@ -5,7 +5,13 @@ const webpack = require('webpack');
 
 module.exports = merge(common, {
   plugins: [
-    new UglifyJSPlugin(),
+    new UglifyJSPlugin({
+      uglifyOptions: {
+        output: {
+          comments: false
+        }
+      }
+    }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production')
     })
