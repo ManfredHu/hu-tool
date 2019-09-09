@@ -1,6 +1,6 @@
 {
   "name": "hu-tool",
-  "version": "1.2.26",
+  "version": "1.2.27",
   "description": "good game tools, means final tool",
   "directories": {},
   "scripts": {
@@ -64,7 +64,6 @@
   },
   "dependencies": {
     "is-type-of": "^1.2.1",
-    "js-cookie": "^2.2.1",
     "url-parse": "^1.4.3"
   },
   "main": "lib/hu-tool.js",
