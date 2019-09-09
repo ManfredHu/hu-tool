@@ -12,9 +12,7 @@
     "watch": "jest --watch",
     "start": "webpack-dev-server --open --config webpack.dev.js",
     "commit": "npx git-cz",
-    "pub": "npm run build && npm version patch -f",
-    "version": "git add . && git commit -m 'auto commit' && git push",
-    "postversion": "npm publish"
+    "pub": "sh autocm.sh"
   },
   "files": [
     "src",
