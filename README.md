@@ -132,6 +132,7 @@ URL(testUrl).format({
   port: '443',
   protocol: 'https'
 }) //https://user:pass@www.tmtpost.com:443/p/a/t/h/2737087.html?mobile=1&mdebug=1&_test=1#haha=init&lh=1
+URL(testUrl).removeProtocal() // //user:pass@www.tmtpost.com:8080/p/a/t/h/2737087.html?mobile=1&mdebug=1&_test=1#haha=init&lh=1
 ```
 
 ### UA
