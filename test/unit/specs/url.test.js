@@ -148,3 +148,11 @@ test('removeHashParam', () => {
   expect(temp.getHashParam('timer')).toBe('')
   expect(temp.getHashParam('name')).toBe('')
 })
+
+test('removeProtocal', () => {
+  // same
+  expect(URL(realUrl).removeProtocal()).toBe('//m.999.mm.com/m_nn/active/gc.wtf.nocache.html?__channel=nkm&debug=1&timer=1&clearLocal=1&x_xxx_m=on&log=1#/abc?timer=1123&name=mygirls')
+  expect(URL(realUrl).format({
+    protocol: ''
+  })).toBe('//m.999.mm.com/m_nn/active/gc.wtf.nocache.html?__channel=nkm&debug=1&timer=1&clearLocal=1&x_xxx_m=on&log=1#/abc?timer=1123&name=mygirls')
+})

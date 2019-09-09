@@ -70,6 +70,10 @@ class URL {
     return this._parsedObj.toString()
   }
 
+  removeProtocal() {
+    return this._parsedObj.toString().replace(/^(https|http):/, '')
+  }
+
   getAllHashParams() {
     const matchArr = this._parsedObj.hash.match(/(\w+=\w+)/g)
     const obj = {}
