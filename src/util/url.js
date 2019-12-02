@@ -87,7 +87,7 @@ class URL {
   }
 
   validUrl(str) {
-    if (!str) str = this.format()
+    if (typeof str !== 'string' && !str) str = this.format()
     // 这里增加了(//)?以满足//开头的链接
     const pattern = new RegExp('^(https?:\\/\\/)?(//)?' + // protocol
       '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // domain name
