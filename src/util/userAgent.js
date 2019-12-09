@@ -119,6 +119,8 @@ function client (userAgentInfo = '', platform = '') {
   // all iphone , android , winphone and nikia symbian
   const isPC = !(isIOS || isAndroid || /(?:Windows Phone)/.test(ua) || /(?:SymbianOS)/.test(ua))
   const isPhone = !isPC
+  const isMiniProgram = /miniProgram/ig.test(ua)
+
   return {
     userAgent: ua, // 用户浏览器Ua原文
     engine, // 包含着用户浏览器引擎（内核）信息
@@ -128,7 +130,8 @@ function client (userAgentInfo = '', platform = '') {
     isAndroid, // 是否是安卓
     isIOS, // 是否是IOS
     isPC,
-    isPhone
+    isPhone,
+    isMiniProgram
   }
 };
 

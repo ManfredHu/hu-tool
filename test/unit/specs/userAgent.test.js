@@ -98,4 +98,9 @@ test('check isAndroid', () => {
   expect(UA(symbinaUA).isPC).toBeFalsy()
   expect(UA(symbinaUA).isPhone).toBeTruthy()
   expect(UA().isPC).toBeTruthy()
+
+  const miniProgram = 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1 wechatdevtools/1.02.1910120 MicroMessenger/7.0.4 Language/zh_CN webview/15439_4 webdebugger miniprogramhtmlwebview miniProgram port/34241'
+  expect(UA(miniProgram).isMiniProgram).toBeTruthy()
+  expect(UA(miniProgram).isWeixin).toBeTruthy()
+  expect(UA(miniProgram).isPC).toBeFalsy()
 })
