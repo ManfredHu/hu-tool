@@ -87,11 +87,12 @@ class URL {
   }
 
   validUrl(str) {
-    if (!str) str = this.format()
+    if (typeof str !== 'string' && !str) str = this.format()
     // 这里增加了(//)?以满足//开头的链接
     const pattern = new RegExp('^(https?:\\/\\/)?(//)?' + // protocol
       '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|' + // domain name
-      '((\\d{1,3}\\.){3}\\d{1,3}))' + // OR ip (v4) address
+      '((\\d{1,3}\\.){3}\\d{1,3}))|' + // OR ip (v4) address
+      '(localhost)' + // localhost
       '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*' + // port and path
       '(\\?[;&a-z\\d%_.~+=-]*)?' + // query string
       '(\\#/?[-a-z\\d_]*)?(\\?[;&a-z\\d%_.~+=-]*)?$', 'i') // fragment locator

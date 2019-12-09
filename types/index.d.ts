@@ -101,6 +101,7 @@ declare module 'hu-tool' {
     addHashParam(params: string | string[] | object): string
     removeHashParam(params: string | string[] | object): string
     hashFormat(allHashParams: object): string
+    removeProtocal(): string
   }
 
   interface URL {
@@ -117,6 +118,7 @@ declare module 'hu-tool' {
     addHashParam(params: string | string[] | object): string
     removeHashParam(params: string | string[] | object): string
     hashFormat(allHashParams: object): string
+    removeProtocal(): string
   }
   const URL: URL_Static
   const url: URL_Static
@@ -156,6 +158,7 @@ declare module 'hu-tool' {
     isIOS: boolean
     isPC: boolean
     isPhone: boolean
+    isMiniProgram: boolean
   }
   const UA: UA
   const ua: UA

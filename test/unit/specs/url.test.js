@@ -93,6 +93,8 @@ test('validUrl', () => {
   expect(URL().validUrl(checkIsHashTest)).toBeFalsy()
   expect(URL().validUrl(checkIsLinkTest)).toBeTruthy()
   expect(URL(checkIsLinkTest).validUrl()).toBeTruthy()
+  expect(URL().validUrl('http://localhost:8090/#/record')).toBeTruthy()
+  expect(URL().validUrl('http://88.8.888.82/project/hehehe/index.html/#/record')).toBeTruthy()
 })
 
 test('addQueryParam', () => {
