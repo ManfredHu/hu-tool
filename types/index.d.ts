@@ -160,6 +160,9 @@ declare module 'hu-tool' {
     isPhone: boolean
     isMiniProgram: boolean
   }
+
+  declare function UA(userAgentInfo: String, platform: String): Object
+
   const UA: UA
   const ua: UA
 }
