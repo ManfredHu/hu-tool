@@ -81,12 +81,12 @@ declare module "hu-tool" {
 
   // can URL(url) or new URL()
   interface URL_Static {
-    new (link: string, option: Object): URL;
-    new (link: string): URL;
+    new (link?: string, option?: Object): URL;
+    new (link?: string): URL;
 
     /** 作为函数使用 */
-    (link: string): URL;
-    (option: object): URL;
+    (link?: string): URL;
+    (option?: object): URL;
 
     _parsedObj: Parse;
     getQueryParam(key: string): string;
