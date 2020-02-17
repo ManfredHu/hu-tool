@@ -60,13 +60,6 @@ test('get url chain', () => {
   expect(URL(realUrl).getHashParam('time')).toBe('')
 })
 
-// test('get url chain', () => {
-//   console.log(111, URL) // [Function: getUrl]
-//   console.log(222, new URL()) // class URL
-//   console.log(333, new URL(realUrl))
-//   console.log(555, URL(realUrl))
-//   expect(new URL()).toThrowError()
-// })
 test('getAllQueryParams', () => {
   expect(new URL(realUrl).getAllQueryParams().debug).toBe('1')
 })
@@ -112,7 +105,16 @@ test('addQueryParam', () => {
     debug: 1,
     wtf: 'myName'
   })).getQueryParam('ftw')).toBe('')
+
   expect(URL(URL(realUrl).addQueryParam('/path/path?debug=1&wtf=myName')).getQueryParam('wtf')).toBe('myName')
+  // 2020-2-17 bug
+  expect(
+    URL(
+      URL('http://localhost:9110/?timeType=day#/deal').addQueryParam(
+        'timeType='
+      )
+    ).getQueryParam('timeType')
+  ).toBe('')
 })
 
 test('removeQueryParam', () => {

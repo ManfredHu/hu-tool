@@ -102,7 +102,7 @@ class URL {
   addQueryParam(obj) {
     if (!obj) throw new Error('not params in addQueryParam')
     if (typeof obj === 'string') {
-      const rst = obj.match(/\w+=\w+/g)
+      const rst = obj.match(/[^?&]+=([^&]+)?/g)
       if (_typeCheck.isArray(rst)) {
         rst.forEach(item => {
           const [key, value] = item.split('=')
