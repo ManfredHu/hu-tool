@@ -1,4 +1,4 @@
-declare module "hu-tool" {
+declare namespace "hu-tool" {
   interface Phone {
     isMobile(type: string | number): boolean;
     getPurePhone(type: string | number): string;
