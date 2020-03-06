@@ -1,4 +1,4 @@
-declare namespace "hu-tool" {
+declare namespace huTool {
   interface Phone {
     isMobile(type: string | number): boolean;
     getPurePhone(type: string | number): string;
@@ -11,8 +11,8 @@ declare namespace "hu-tool" {
     ): string;
   }
 
-  const Phone: Phone;
-  const phone: Phone;
+  const Phone: huTool.Phone;
+  const phone: huTool.Phone;
 
   interface is {
     isUndef(type: any): boolean;
@@ -61,8 +61,8 @@ declare namespace "hu-tool" {
     Long(type: any): boolean;
   }
 
-  const is: is;
-  const TypeCheck: is;
+  const is: huTool.is;
+  const TypeCheck: huTool.is;
 
   interface Parse {
     protocol: string;
@@ -120,8 +120,8 @@ declare namespace "hu-tool" {
     hashFormat(allHashParams: object): string;
     removeProtocal(): string;
   }
-  const URL: URL_Static;
-  const url: URL_Static;
+  const URL: huTool.URL_Static;
+  const url: huTool.URL_Static;
 
   interface engine {
     trident: number;
@@ -172,6 +172,6 @@ declare namespace "hu-tool" {
     isPhone: Boolean;
     isMiniProgram: Boolean;
   }
-  function UA(userAgentInfo?: String, platform?: String): UAReturn;
-  function ua(userAgentInfo?: String, platform?: String): UAReturn;
+  function UA(userAgentInfo?: String, platform?: String): huTool.UAReturn;
+  function ua(userAgentInfo?: String, platform?: String): huTool.UAReturn;
 }
