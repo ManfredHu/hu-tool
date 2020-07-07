@@ -7,6 +7,7 @@ const checkIsHashTest = 'goodsDetail'
 const newTestUrl = 'http://www.baidu.com?hehe=test&abc=1&phone=18682193117&source=20_dx&debug=vconsole&nofans=1&idcard=441502199401262516&code=021NlJ870yuCmF1hdZ970jc2970NlJ8H'
 const newTestUrl2 = 'http://www.baidu.com?hehe=test&abc=1&phone=18682193117&source=20_dx&debug=vconsole&nofans=1&idcard=441502199401262516&code=021NlJ870yuCmF1hdZ970jc2970NlJ8H#abc'
 const checkIsLinkTest2 = '//baidu.com/aics-cloud/xiaomi/page.do?channel=21115&id=24638123'
+const newTestUrl3 = `http://127.0.0.1:9110/vdata/contractPhoneIndex_utf8.js`
 
 test('parse url', () => {
   expect(URL(testUrl).port).toBe('8080')
@@ -159,4 +160,8 @@ test('removeProtocal', () => {
   expect(URL(realUrl).format({
     protocol: ''
   })).toBe('//m.999.mm.com/m_nn/active/gc.wtf.nocache.html?__channel=nkm&debug=1&timer=1&clearLocal=1&x_xxx_m=on&log=1#/abc?timer=1123&name=mygirls')
+})
+
+test('parseLocalhostUrl', () => {
+  expect(URL(newTestUrl3)._parsedObj.host).toBe('127.0.0.1:9110')
 })
