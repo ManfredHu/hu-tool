@@ -120,6 +120,17 @@ function client (userAgentInfo = '', platform = '') {
   const isPC = !(isIOS || isAndroid || /(?:Windows Phone)/.test(ua) || /(?:SymbianOS)/.test(ua))
   const isPhone = !isPC
   const isMiniProgram = /miniProgram/ig.test(ua)
+  // const isWechatDevtools = /wechatdevtools/ig.test(ua)
+
+  // 与小程序字段做兼容
+  // 平台
+  // const platform = isWechatDevtools ? 'devtools' : (isIOS ? 'ios': (isAndroid ? 'android' : ''))
+  // 微信客户端版本
+  // const version = /MicroMessenger\/([^(\s]+)/ig.test(ua)
+
+  // const brand
+  // model: rst.model,
+  // system: rst.system,
 
   return {
     userAgent: ua, // 用户浏览器Ua原文
@@ -131,7 +142,8 @@ function client (userAgentInfo = '', platform = '') {
     isIOS, // 是否是IOS
     isPC,
     isPhone,
-    isMiniProgram
+    isMiniProgram,
+    // platform
   }
 };
 
