@@ -99,8 +99,18 @@ test('check isAndroid', () => {
   expect(UA(symbinaUA).isPhone).toBeTruthy()
   expect(UA().isPC).toBeTruthy()
 
-  const miniProgram = 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1 wechatdevtools/1.02.1910120 MicroMessenger/7.0.4 Language/zh_CN webview/15439_4 webdebugger miniprogramhtmlwebview miniProgram port/34241'
-  expect(UA(miniProgram).isMiniProgram).toBeTruthy()
-  expect(UA(miniProgram).isWeixin).toBeTruthy()
-  expect(UA(miniProgram).isPC).toBeFalsy()
+  const miniProgramIOS = 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1 wechatdevtools/1.02.1910120 MicroMessenger/7.0.4 Language/zh_CN webview/15439_4 webdebugger miniprogramhtmlwebview miniProgram port/34241'
+  // Mozilla/5.0 (iPhone; CPU iPhone OS 13_5_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/7.0.14(0x17000e28) NetType/4G Language/zh_CN
+  expect(UA(miniProgramIOS).isMiniProgram).toBeTruthy()
+  expect(UA(miniProgramIOS).isWeixin).toBeTruthy()
+  expect(UA(miniProgramIOS).isPC).toBeFalsy()
+  expect(UA(miniProgramIOS).mpVersion).toBe('7.0.4')
+  expect(UA(miniProgramIOS).mpSystem).toBe('iOS 11.0')
+
+  const miniProgramAndroid = 'Mozilla/5.0 (Linux; Android 7.1.1; vivo Y75 Build/N6F26Q; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/78.0.3904.62 XWEB/2571 MMWEBSDK/200601 Mobile Safari/537.36 MMWEBID/12 MicroMessenger/7.0.16.1700(0x2700103B) Process/tools WeChat/arm64 NetType/4G Language/zh_CN ABI/arm64'
+  expect(UA(miniProgramAndroid).isWeixin).toBeTruthy()
+  expect(UA(miniProgramAndroid).isPC).toBeFalsy()
+  expect(UA(miniProgramAndroid).mpVersion).toBe('7.0.16')
+  expect(UA(miniProgramAndroid).mpPlatform).toBe('android')
+  expect(UA(miniProgramAndroid).mpSystem).toBe('Android 7.1.1')
 })

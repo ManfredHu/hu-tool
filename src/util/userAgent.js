@@ -1,3 +1,7 @@
+import {
+  formatVersion
+} from '@/util/widgets'
+
 function client (userAgentInfo = '', platform = '') {
   let engine = { // 呈现引擎
     trident: 0,
@@ -120,17 +124,27 @@ function client (userAgentInfo = '', platform = '') {
   const isPC = !(isIOS || isAndroid || /(?:Windows Phone)/.test(ua) || /(?:SymbianOS)/.test(ua))
   const isPhone = !isPC
   const isMiniProgram = /miniProgram/ig.test(ua)
-  // const isWechatDevtools = /wechatdevtools/ig.test(ua)
+  const isWechatDevtools = /wechatdevtools/ig.test(ua)
 
   // 与小程序字段做兼容
   // 平台
-  // const platform = isWechatDevtools ? 'devtools' : (isIOS ? 'ios': (isAndroid ? 'android' : ''))
+  const mpPlatform = isWechatDevtools ? 'devtools' : (isIOS ? 'ios': (isAndroid ? 'android' : ''))
   // 微信客户端版本
-  // const version = /MicroMessenger\/([^(\s]+)/ig.test(ua)
+  const versionObj = /MicroMessenger\/([^(\s]+)/ig.exec(ua)
+  const mpVersion = versionObj ? formatVersion(versionObj[1]) : ''
 
-  // const brand
-  // model: rst.model,
-  // system: rst.system,
+  // 小程序的system字段如 system: "Android 5.0" 或 system: "iOS 13.5.1"
+  // iOS系统版本号从类似 Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) 取
+  // 安卓系统从类似 Mozilla/5.0 (Linux; Android 7.1.1; vivo Y75 Build/N6F26Q; wv) 取
+  let mpSystem = ''
+  let mpSystemRst = isIOS ? /iPhone\s+OS\s+([^\s;]+)/ig.exec(ua) : /Android\s+([^\s;]+)/ig.exec(ua)
+  if (mpSystemRst && typeof mpSystemRst[1] === 'string') {
+    let versionTemp = formatVersion(mpSystemRst[1])
+    mpSystem = `${isIOS ? 'iOS' : 'Android'} ${versionTemp}`
+  }
+
+  // 品牌型号引入会导致库体积增大过多，需要另外支持
+  // brand model
 
   return {
     userAgent: ua, // 用户浏览器Ua原文
@@ -140,10 +154,12 @@ function client (userAgentInfo = '', platform = '') {
     isWeixin, // 是否是微信
     isAndroid, // 是否是安卓
     isIOS, // 是否是IOS
-    isPC,
+    isPC, // 是否是PC
     isPhone,
-    isMiniProgram,
-    // platform
+    isMiniProgram, // 微信小程序
+    mpPlatform,
+    mpVersion,
+    mpSystem
   }
 };
 
