@@ -5,6 +5,7 @@
 [![npm bundle size (minified + gzip)](https://img.shields.io/bundlephobia/minzip/react.svg?style=flat-square)](https://www.npmjs.com/package/hu-tool)
 [![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg?style=flat-square)](https://github.com/ManfredHu/hu-tool)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg?style=flat-square)](https://github.com/ManfredHu/hu-tool)
+[![Download](https://img.shields.io/npm/dm/hu-tool.svg)](https://www.npmjs.com/package/hu-tool)
 
 hu-tool is a public code tool library.
 It will contain some tool modules that are used daily.
